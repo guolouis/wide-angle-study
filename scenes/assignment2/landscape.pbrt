@@ -1,0 +1,166 @@
+LookAt 100 0 0   0 0 0    0 0 1
+
+Camera "perspective" "float fov" [90]
+ 
+Film "image" "integer xresolution" [1000] "integer yresolution" [500]
+     "string filename" "photography.png"
+
+Sampler "halton" "integer pixelsamples" [6] #[6]
+
+Integrator "path"   "integer maxdepth" [10]
+
+WorldBegin
+
+## Light ##################################################################################################################################
+AttributeBegin
+  Rotate 320 0 0 1
+  Translate 0 0 -50
+  LightSource "infinite"  "string mapname" ["textures/skylight-dusk.exr"] 
+AttributeEnd
+
+## Materials ##############################################################################################################################
+Texture "Leaves-autumn" "spectrum" "imagemap"
+	 "string filename" ["./treeTexture/Leaves-2.png"]
+	 "float uscale" 1
+	 "float vscale" 1
+MakeNamedMaterial  "Leaves-autumn" "string type" "matte" "texture Kd" "Leaves-autumn"
+
+Texture "Bark" "spectrum" "imagemap"
+	"string filename" "./treeTexture/Bark-4.png"
+	"float uscale" 1
+	"float vscale" 1
+MakeNamedMaterial "Bark" "string type" "matte" "texture Kd" "Bark"
+
+## Objects #################################################################################################################################
+
+###MAPLETREE###
+ObjectBegin "Mapletree"
+AttributeBegin 
+  Translate 0 0 0
+  Scale 5 5 5
+  Rotate 90 1 0 0 
+NamedMaterial "Bark"
+Include "treegeometry/mapleTree-trunk.pbrt"
+AttributeEnd
+
+
+AttributeBegin
+  Translate 0 0 0
+  Scale 5 5 5
+  Rotate 90 1 0 0 
+NamedMaterial "Leaves-autumn"
+Include "treegeometry/mapleTree-leaves.pbrt"
+AttributeEnd
+
+ObjectEnd
+
+##########PINE TREE###########
+ObjectBegin "Pinetree"
+AttributeBegin 
+  Translate 0 75 0
+  Scale 5 5 5
+  Rotate 90 1 0 0 
+NamedMaterial "Bark"
+Include "treegeometry/pineTree-trunk.pbrt"
+AttributeEnd
+
+
+AttributeBegin
+  Translate 0 75 0
+  Scale 5 5 5
+  Rotate 90 1 0 0 
+NamedMaterial "Leaves-autumn"
+Include "treegeometry/pineTree-leaves.pbrt"
+AttributeEnd
+
+ObjectEnd
+
+#                     z
+#                     |
+#                     |
+#                     |
+#                     |
+#                     |
+#                     |
+#                     |
+#                     |
+#                     |
+#  y <----------------
+#
+#  x toward me
+
+
+AttributeBegin
+Translate -6 90 -3
+Rotate 40 0 0 1
+Rotate 20 1 0 0
+ObjectInstance "Mapletree"
+AttributeEnd
+
+
+AttributeBegin
+Translate -20 150 -3
+Rotate 120 0 0 1
+ObjectInstance "Mapletree"
+AttributeEnd
+
+AttributeBegin
+Translate -20 190 -3
+Rotate 90 0 0 1
+ObjectInstance "Mapletree"
+AttributeEnd
+
+
+AttributeBegin
+Translate -70 -250 -3
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+Translate -55 -5 -1
+ObjectInstance "Pinetree"
+
+AttributeEnd
+
+
+########### Car ###########
+#ObjectBegin "Car"
+#AttributeBegin 
+#  Scale 12 12 12
+#  Rotate 90 1 0 0
+#  Rotate 90 0 1 0
+#  Include "car-materials.pbrt"
+#  Include "car-geometry.pbrt"
+#AttributeEnd
+#ObjectEnd
+#
+#AttributeBegin
+#Translate 10 30 0 
+#ObjectInstance "Car"
+#AttributeEnd
+#
+#AttributeBegin
+#
+#
+#LightSource "spot" "color I" [12000 12000 12000] "point from" [100 20 40] "point to" [0 10 20] "float coneangle" [190]
+
+WorldEnd

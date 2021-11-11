@@ -1,0 +1,150 @@
+############ The Car
+MakeNamedMaterial "CarPaint" 
+        "float uroughness" [ 0.0005 ] 
+        "float vroughness" [ 0.00051 ] 
+        "string type" [ "substrate" ] 
+        "rgb Kd" [ 0.4 0.03 0.03 ] 
+        "rgb Ks" [ 0.3 0.3 0.3 ] 
+
+MakeNamedMaterial "HeadLight" 
+        "float roughness" [ 0.0104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.639999986 0.639999986 0.639999986 ] 
+        "rgb Ks" [ 0.5 0.5 0.5 ] 
+        "rgb Kt" [ 0 0 0 ] 
+        "rgb opacity" [ 1 1 1 ] 
+
+MakeNamedMaterial "HeadLightGlass" 
+        "string type" [ "glass" ] 
+
+MakeNamedMaterial "HeadLightGlass01" 
+        "string type" [ "glass" ] 
+
+MakeNamedMaterial "LEATHER-white" 
+        "string type" [ "fourier" ] 
+        "string bsdffile" "bsdfs/leather.bsdf"
+MakeNamedMaterial "LEATHER-black"
+        "string type" "matte"
+        "rgb Kd" [.01 .01 .01 ]
+MakeNamedMaterial "LEATHER"
+        "string type" "mix"
+        "string namedmaterial1" "LEATHER-white"
+        "string namedmaterial2" "LEATHER-black"
+        "rgb amount" [.2 .2 .2]
+
+MakeNamedMaterial "LightGlass" 
+        "string type" [ "glass" ] 
+
+MakeNamedMaterial "LogoAzure" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.157092005 0.390300989 0.641520977 ] 
+
+MakeNamedMaterial "LogoBlack" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.064000003 0.064000003 0.064000003 ] 
+
+MakeNamedMaterial "LogoBlue" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.191944003 0.515774012 0.616523981 ] 
+
+MakeNamedMaterial "LogoRed" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.673442006 0.105791003 0.105791003 ] 
+
+MakeNamedMaterial "LogoSilver" 
+        "string type" [ "metal" ] 
+        "spectrum k" "spds/Al.k.spd"
+        "spectrum eta" "spds/Al.eta.spd"
+
+MakeNamedMaterial "LogoWhite" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.773397028 0.773397028 0.773397028 ] 
+
+MakeNamedMaterial "None" 
+        "float roughness" [ 0.1 ] 
+#        "float index" [ 1 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.800000012 0.800000012 0.800000012 ] 
+        "rgb Ks" [ 0.800000012 0.800000012 0.800000012 ] 
+        "rgb Kt" [ 0 0 0 ] 
+        "rgb opacity" [ 1 1 1 ] 
+
+MakeNamedMaterial "Seal" 
+        "float roughness" [ 0.0104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.0730770007 0.0729060024 0.0729060024 ] 
+        "rgb Ks" [ 0.2 0.2 0.2 ] 
+
+MakeNamedMaterial "WheelRim" 
+        "string type" [ "metal" ] 
+        "spectrum k" "spds/Al.k.spd"
+        "spectrum eta" "spds/Al.eta.spd"
+
+MakeNamedMaterial "WindowSeal" 
+        "float roughness" [ 0.0104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.030770007 .029060024 0.029060024 ] 
+        "rgb Ks" [ 0.05 0.05 0.05 ] 
+
+MakeNamedMaterial "WindscreenGlass" 
+        "string type" [ "glass" ] 
+
+MakeNamedMaterial "brakeDisc" 
+        "float roughness" [ 0.0104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.594117999 0.588559985 0.588559985 ] 
+        "rgb Ks" [ 0.5 0.5 0.5 ] 
+        "rgb Kt" [ 0 0 0 ] 
+        "rgb opacity" [ 1 1 1 ] 
+
+MakeNamedMaterial "brake_clipper" 
+        "float roughness" [ 0.0104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.49267599 0.132439002 0.132439002 ] 
+        "rgb Ks" [ 0.558982015 0.558982015 0.558982015 ] 
+        "rgb Kt" [ 0 0 0 ] 
+        "rgb opacity" [ 1 1 1 ] 
+
+MakeNamedMaterial "carbonfibre" 
+        "float uroughness" [ 0.01 ] 
+        "float vroughness" [ 0.01 ] 
+        "string type" [ "substrate" ] 
+        "rgb Kd" [ 0.0342830017 0.0323139995 0.0323139995 ] 
+        "rgb Ks" [ 0.1 0.1 0.1 ] 
+
+#MakeNamedMaterial "floor" 
+#        "float uroughness" [ 0.0104080001 ] 
+#        "float vroughness" [ 0.0104080001 ] 
+#        "string type" [ "substrate" ] 
+#        "rgb Kd" [ 0.0442847997 0.0442847997 0.0442847997 ] 
+#        "rgb Ks" [ 0.1 0.1 0.1 ] 
+
+MakeNamedMaterial "grillmetal" 
+        "string type" [ "metal" ] 
+        "spectrum k" "spds/Al.k.spd"
+        "spectrum eta" "spds/Al.eta.spd"
+
+MakeNamedMaterial "mattefloor" 
+        "string type" [ "matte" ] 
+        "rgb Kd" [ 0.0954879969 0.0715420023 0.0303969998 ] 
+
+MakeNamedMaterial "shinychrome" 
+        "string type" [ "metal" ] 
+        "spectrum k" "spds/Al.k.spd"
+        "spectrum eta" "spds/Al.eta.spd"
+
+MakeNamedMaterial "tire" 
+        "float roughness" [ 0.104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.0639400035 0.0623500012 0.0623500012 ] 
+        "rgb Ks" [ 0.156844014 0.190024012 0.189532006 ] 
+
+#Texture "tiresidewall-bump" "float" "imagemap" 
+#        "string filename" [ "textures/wm_original_continental_sportcontact2_sitemap_original.jpg" ] 
+# Name "BMWHeadLightA.009_Cube.001"
+MakeNamedMaterial "tiresidewall" 
+        "float roughness" [ 0.104080001 ] 
+        "string type" [ "uber" ] 
+        "rgb Kd" [ 0.0639400035 0.0623500012 0.0623500012 ] 
+        "rgb Ks" [ 0.156844014 0.190024012 0.189532006 ] 
+
