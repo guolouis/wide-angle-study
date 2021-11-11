@@ -15,7 +15,7 @@ Go into the Release directory and do
 For example
 
 ```
-./ex2.ps1 photography ../Results/firstphoto.png
+./ex2.ps1 photography ../Results/firstphoto
 ```
 
 $arg1 is the name of the file .pbrt
